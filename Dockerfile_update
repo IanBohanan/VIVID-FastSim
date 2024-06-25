@@ -1,0 +1,38 @@
+# Run from /FastSim "docker build --file ./Dockerfile_update --tag fastsim ."
+# Project gitlab token XxZ8iijDJ4FNjTHvz5Lf
+
+# FROM fastsim
+# RUN rm -rf FastSim/
+# RUN rm ~/.gitconfig
+# RUN git config --global url.https://fastsim:XxZ8iijDJ4FNjTHvz5Lf@gitlab.uah.edu/.insteadOf "https://gitlab.uah.edu/"
+# RUN git clone https://gitlab.uah.edu/fastsim/FastSim.git
+# RUN cd /FastSim/OpenPLC_v3 && ./install.sh docker
+
+# MAKE SURE YOU ARE CLONING THE RIGHT BRANCH IF NOT MAIN
+# FROM fastsim
+# RUN rm -rf FastSim/
+# RUN apt-get update
+# RUN git config --global url.https://fastsim:XxZ8iijDJ4FNjTHvz5Lf@gitlab.uah.edu/.insteadOf "https://gitlab.uah.edu/"
+# RUN git clone https://gitlab.uah.edu/fastsim/FastSim.git
+# RUN apt install -y ettercap-text-only
+# RUN rm /etc/ettercap/etter.conf
+# RUN mv /FastSim/attacks/Collection/etter.conf /etc/ettercap/
+# RUN apt install -y iptables
+# RUN apt-get install -y linux-modules-extra-5.15.0-30-generic
+# RUN apt-get install -y kmod
+# RUN apt install -y hping3
+# RUN apt install -y iproute2
+# RUN pip3 install pyModbusTCP
+# RUN apt install -y openssh-server
+
+FROM fastsim
+RUN rm -rf FastSim/
+RUN rm ~/.gitconfig
+RUN git config --global url.https://fastsim:XxZ8iijDJ4FNjTHvz5Lf@gitlab.uah.edu/.insteadOf "https://gitlab.uah.edu/"
+RUN git clone -b Attack-Files https://gitlab.uah.edu/fastsim/FastSim.git
+RUN cd /FastSim/OpenPLC_v3 && ./install.sh docker
+RUN apt-get install -y \
+python3-pip \
+scapy \
+linux-modules-extra-5.15.0-69-generic 
+RUN pip install pyModbusTCP

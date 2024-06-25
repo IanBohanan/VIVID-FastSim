@@ -1,0 +1,13 @@
+scenario_name: Test Attack Scenario
+virtual_environment: docker
+scenario_actions:
+  1: {
+    path: attacks/Lateral_Movement/T0867_Prep.yml,
+    container_name: watertank_hmi
+  }
+  2: {
+    path: attacks/Lateral_Movement/T0867_Attack.yml,
+    container_name: watertank_attacker
+  }
+
+run_asynchronous: 'false'

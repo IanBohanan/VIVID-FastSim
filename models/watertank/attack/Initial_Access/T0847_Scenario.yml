@@ -1,0 +1,15 @@
+# Template for scenarios
+
+scenario_name: Replication Through Removable Media 
+scenario_description: Mount a virtual USB drive with an autorun.sh
+link: # any reference link describing the scenario
+virtual_environment: docker
+scenario_actions:
+  1: {
+    path: attacks/Initial_Access/T0847.yml,
+    container_name: plc1
+  }
+  
+start_time: 5
+run_asynchronous: 'false'
+  
