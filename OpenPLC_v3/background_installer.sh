@@ -30,6 +30,7 @@ function linux_install_deps {
 }
 
 function install_py_deps {
+    echo "INSTALL_PY_DEPS"
     $1 pip2 install flask
     $1 pip2 install flask-login
     $1 pip2 install pyserial
@@ -39,6 +40,8 @@ function install_py_deps {
 
 function install_all_libs {
         echo ""
+    echo "CHECKING IF BOOST INSTALLED"
+    ifconfig -V
     echo "[MATIEC COMPILER]"
     cd utils/matiec_src
     autoreconf -i
@@ -216,7 +219,7 @@ if [ "$1" == "win" ]; then
     cd ../..
 
     echo ""
-    echo "[LIBMODBUS]"
+    echo "[LIBMODBUSS]"
     cd utils/libmodbus_src
     ./autogen.sh
     ./configure
@@ -230,6 +233,8 @@ if [ "$1" == "win" ]; then
 
     echo ""
     echo "[FINALIZING]"
+    echo "FINALSETTER1"
+    ifconfig -V
     cd webserver/scripts
     ./change_hardware_layer.sh blank
     ./compile_program.sh blank_program.st
@@ -247,6 +252,8 @@ elif [ "$1" == "linux" ]; then
 
     echo ""
     echo "[FINALIZING]"
+    echo "FINALSETTER2"
+    ifconfig -V
     cd webserver/scripts
     ./change_hardware_layer.sh blank_linux
     ./compile_program.sh blank_program.st
@@ -261,6 +268,8 @@ elif [ "$1" == "docker" ]; then
 
     echo ""
     echo "[FINALIZING]"
+    echo "FINALSETTER3"
+    ifconfig -V
     cd webserver/scripts
     ./change_hardware_layer.sh blank_linux
     ./compile_program.sh blank_program.st
@@ -279,6 +288,8 @@ elif [ "$1" == "rpi" ]; then
 
     echo ""
     echo "[FINALIZING]"
+    echo "FINALSETTER4"
+    ifconfig -V
     cd webserver/scripts
     ./change_hardware_layer.sh blank_linux
     ./compile_program.sh blank_program.st
@@ -307,6 +318,8 @@ elif [ "$1" == "neuron" ]; then
 
     echo ""
     echo "[FINALIZING]"
+    echo "FINALSETTER5"
+    ifconfig -V
     cd webserver/scripts
     ./change_hardware_layer.sh blank_linux
     ./compile_program.sh blank_program.st
@@ -321,6 +334,8 @@ elif [ "$1" == "custom" ]; then
 
     echo ""
     echo "[FINALIZING]"
+    echo "FINALSETTER6"
+    ifconfig -V
     cd webserver/scripts
     ./change_hardware_layer.sh blank_linux
     ./compile_program.sh blank_program.st

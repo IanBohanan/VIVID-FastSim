@@ -4,7 +4,8 @@
 #include <fstream>
 #include <iostream>
 
-Config parseConfig(std::string configPath) {
+Config parseConfig(std::string configPath) 
+{	
     std::ifstream configFile(configPath);
     std::string const configString = std::string((std::istreambuf_iterator<char>(configFile)), std::istreambuf_iterator<char>());
     auto jsonConfig = boost::json::parse(configString).get_object();
