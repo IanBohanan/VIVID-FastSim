@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y build-essential vim git iputils-ping wget systemd tcpdump net-tools libpcap-dev libboost-all-dev
-RUN git config --global url.https://fastsim:REPLACE_WITH_PASSKEY@gitlab.uah.edu/.insteadOf "https://gitlab.uah.edu/"
+RUN git config --global url.https://fastsim:REPLACE_WITH_PASSKEY@github.com/.insteadOf "https://github.com/"
 RUN git clone -b main https://github.com/IanBohanan/VIVID-FastSim
 RUN apt install -y \ 
 iptables \
