@@ -23,8 +23,7 @@ RUN rm -rf python-netfilterqueue
 RUN wget -P /usr/local https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2
 RUN cd /usr/local && tar --bzip2 -xf ./boost_1_79_0.tar.bz2
 RUN export BOOST_ROOT=/usr/local/boost_1_79_0
-RUN ifconfig -V
-RUN echo $BOOST_ROOT
-RUN echo CHECK_ABOVE_LINE_IF_BOOST_INSTALLED!!!!
-RUN chmod -R 777 VIVID-FastSim
-RUN cd /VIVID-FastSim/OpenPLC_v3 && ./install.sh docker
+RUN chmod -R 777 FastSim
+RUN cd /FastSim/src/hmi && chmod 777 start_hmi.sh
+RUN cd /FastSim/ && chmod 777 start_openplc.sh
+RUN cd /FastSim/OpenPLC_v3 && ./install.sh docker
