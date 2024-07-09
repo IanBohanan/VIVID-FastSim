@@ -1,4 +1,5 @@
 OpenPLC_v3/get-pip.py
+Dockerfile
 OpenPLC_v3/install_log.txt
 OpenPLC_v3/start_openplc.sh
 OpenPLC_v3/utils/dnp3_src/AnalogCommandEvent.ii
