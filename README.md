@@ -105,7 +105,7 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
 
 - Clone GitLab Project to VM Desktop
   - `cd /Desktop`
-  - `git clone https://github.com/IanBohanan/VIVID-FastSim.git -b [branch]`
+  - `git clone https://github.com/IanBohanan/VIVID-FastSim.git -b dockerFix`
 
 
 - Download Wireshark to open pcap output file 
