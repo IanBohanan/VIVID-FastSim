@@ -1,3 +1,6 @@
+***This is the main branch! Make sure to move to the dockerFix branch if you are using a VM!***
+
+
 # FastSim
 ### Initial Run Setup
 ## VM
