@@ -34,7 +34,7 @@ void initialize(std::string projectPath, std::string modelPath) {
         // Now start openplc
         // The following line of code is not needed as long as the new start_openplc.sh file has been pushed to github and you've rebuilt your docker image. 
         //std::string commmand = "docker cp /home/vagrant/IAN/start_openplc.sh " + plc.name + ":/FastSim/start_openplc.sh";
-        std::system(commmand.c_str());
+        //std::system(commmand.c_str());
         std::string command = "docker exec -w /FastSim " + plc.name + " bash ./start_openplc.sh " + "/FastSim/models/" + config.simName + "/" + config.stFile + " &";
         std::system(command.c_str());
         plcStatusMap[plc.name] = true;

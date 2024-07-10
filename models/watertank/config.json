@@ -44,7 +44,7 @@
     "ipAddress": "192.168.1.3"
   },
   "attackScenario": {
-    "enableScenario": true,
+    "enableScenario": "False",
     "path": "attack/Initial_Access/T0847.yml",
     "scenarioStartSimTime": 5.0,
     "enableRetrieveLog": true
