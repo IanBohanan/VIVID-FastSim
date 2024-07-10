@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y build-essential vim git iputils-ping wget systemd tcpdump net-tools libpcap-dev
-RUN git config --global url.https://fastsim:XxZ8iijDJ4FNjTHvz5Lf@gitlab.uah.edu/.insteadOf "https://gitlab.uah.edu/"
-RUN git clone -b Attack-Files https://gitlab.uah.edu/fastsim/FastSim.git
+RUN git config --global url.https://VIVID-FastSim:PUTOWNPASSKEYHERE@github.com/.insteadOf "https://github.com/"
+RUN git clone https://github.com/IanBohanan/VIVID-FastSim.git FastSim
 RUN apt install -y \ 
 iptables \
 openssh-server
@@ -21,4 +21,7 @@ RUN rm -rf python-netfilterqueue
 RUN wget -P /usr/local/ https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2
 RUN cd /usr/local && tar --bzip2 -xf ./boost_1_79_0.tar.bz2
 RUN rm -f boost_1_79_0.tar.bz2
+RUN chmod -R +x ./FastSim 
+RUN chmod +x FastSim/src/hmi/start_hmi.sh
+RUN chmod +x FastSim/start_openplc.sh
 RUN cd /FastSim/OpenPLC_v3 && ./install.sh docker

@@ -32,7 +32,10 @@ void initialize(std::string projectPath, std::string modelPath) {
         std::string shmPath = "/" + plc.name; // actually maps to /dev/shm/<plcName>
         plcShmDataMap[plc.name] = createShm(shmPath);
         // Now start openplc
-        std::string command = "docker exec -w /FastSim " + plc.name + " ./start_openplc.sh " + "/FastSim/models/" + config.simName + "/" + config.stFile + " &";
+        // The following line of code is not needed as long as the new start_openplc.sh file has been pushed to github and you've rebuilt your docker image. 
+        //std::string commmand = "docker cp /home/vagrant/IAN/start_openplc.sh " + plc.name + ":/FastSim/start_openplc.sh";
+        std::system(commmand.c_str());
+        std::string command = "docker exec -w /FastSim " + plc.name + " bash ./start_openplc.sh " + "/FastSim/models/" + config.simName + "/" + config.stFile + " &";
         std::system(command.c_str());
         plcStatusMap[plc.name] = true;
     }
@@ -41,7 +44,7 @@ void initialize(std::string projectPath, std::string modelPath) {
     std::string hmiShmPath = "/hmi"; // actually maps to /dev/shm/hmi
     hmiShmData = createShm(hmiShmPath);
     // Start hmi
-    std::string command = "docker exec -w /FastSim/src/hmi " + config.hmiConfig.name + " ./start_hmi.sh &";
+    std::string command = "docker exec -w /FastSim/src/hmi " + config.hmiConfig.name + " bash ./start_hmi.sh &";
     std::system(command.c_str());
 
     std::u16string PROJECT_PATH = convert.from_bytes(projectPath);

@@ -13,7 +13,7 @@ cp "$1" ./OpenPLC_v3/webserver/st_files/st_file.st
 # Compile
 echo "Compiling..."
 cd OpenPLC_v3/webserver
-./scripts/compile_program.sh st_file.st
+bash ./scripts/compile_program.sh st_file.st
 cd ../../
 
 # Start OpenPLC
