@@ -115,7 +115,7 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
 
 - Add github passkey to Dockerfile
   - Go to the fastsim directory and open the dockerfile
-  - Replace line 5's "PUT_PASSKEY_HERE" in the URL with your own Github Personal Access Token
+  - Replace line 5's "PUT_PASSKEY_HERE" in the URL with your own Github Personal Access Token. Be aware not to commit any changes with your token in the Dockerfile!
 
 ### To Run Application
 - Running Application within VM Terminal
