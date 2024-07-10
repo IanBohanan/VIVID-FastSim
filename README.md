@@ -1,6 +1,3 @@
-***This is the main branch! Make sure to move to the dockerFix branch if you are using a VM!***
-
-
 # FastSim
 ### Initial Run Setup
 ## VM
@@ -116,12 +113,16 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
   - `sudo apt update`
   - `sudo apt install wireshark`
 
+- Add github passkey to Dockerfile
+    -Go to the fastsim directory and open the dockerfile
+    -Replace line 5's "PUT_PASSKEY_HERE" in the URL with your own Github Personal Access Token
 
 ### To Run Application
 - Running Application within VM Terminal
   -  Navigate to cloned environment on Desktop
   - To run, use python3 start.py [absolute file path to environment folder] [model] [branch]
     - ex. python3 start.py /home/ccre/Desktop/FastSim/ watertank Attack-Files
+  - If everything successful, it will run the Simulink with a final message stating how many packets were captured. There will then be an output folder containing the data collected from the simulation.
 
 
 - To Run Everything Locally:
