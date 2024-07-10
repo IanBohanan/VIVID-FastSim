@@ -114,8 +114,8 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
   - `sudo apt install wireshark`
 
 - Add github passkey to Dockerfile
-    -Go to the fastsim directory and open the dockerfile
-    -Replace line 5's "PUT_PASSKEY_HERE" in the URL with your own Github Personal Access Token
+  - Go to the fastsim directory and open the dockerfile
+  - Replace line 5's "PUT_PASSKEY_HERE" in the URL with your own Github Personal Access Token
 
 ### To Run Application
 - Running Application within VM Terminal
