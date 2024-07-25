@@ -1,6 +1,6 @@
 {
   "modelFile": "lock_srw_vB_windows.slx",
-  "simName": "lock",
+  "simName": "lock_srw_vB_windows",
   "stFile": "SL_t20.st",
   "timestepSizeSec": 10.0,
   "runtimeSimSec": 9600.0,
