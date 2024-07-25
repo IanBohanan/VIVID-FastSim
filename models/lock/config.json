@@ -1,7 +1,7 @@
 {
-  "modelFile": "lock_srw_vB_windows.slx",
-  "simName": "lock_srw_vB_windows",
-  "stFile": "SL_t20.st",
+  "modelFile": "lock.slx",
+  "simName": "lock",
+  "stFile": "lock.st",
   "timestepSizeSec": 10.0,
   "runtimeSimSec": 9600.0,
   "matlabLogging": true,
