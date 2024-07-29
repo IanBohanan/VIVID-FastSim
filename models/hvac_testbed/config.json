@@ -49,7 +49,7 @@
     "parent": "dummy0"
   },
    "attacker": {
-    "name": "watertank_attacker",
+    "name": "hvac_attacker",
     "ipAddress": "192.168.1.3"
   },
   "attackScenario": {
